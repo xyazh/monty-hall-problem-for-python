@@ -11,6 +11,13 @@ def raffleDoor(change = False):
         #先随机打开一个门
         ext = doors.pop(random.randint(0,2))
 
+        """
+        现在待选列表里有TF、FT、FF三种情况
+        由于列表是随机的，不关注顺序，故将列表首项固定作为选择项
+        于是TF可忽略
+        FF与FT则将列表首项pop
+        """
+
         #排除一个假的门
         if not doors[0]:
             doors.pop(0)
