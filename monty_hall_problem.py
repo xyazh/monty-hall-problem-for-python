@@ -1,7 +1,7 @@
 import random
 
 def raffleDoor(change = False):
-    n = 1000000
+    n = 10000000
     r = 0
     for _ in range(n):
         #随机生成三个门，其中一个为T另外两个为F
@@ -12,9 +12,8 @@ def raffleDoor(change = False):
         ext = doors.pop(random.randint(0,2))
 
         #排除一个假的门
-        number = random.randint(0,1)
-        if doors[number]:
-            doors.pop(1^number)
+        if not doors[0]:
+            doors.pop(0)
 
         #是否要换
         if change:
